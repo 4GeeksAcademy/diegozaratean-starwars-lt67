@@ -38,7 +38,11 @@ export const Home = () => {
 			
 
 			<h1>Naves API</h1>
-			{starships.map( (nave, index)=> <Card key={nave.uid} nave={nave} uid={nave.uid} model={nave.model} name= {nave.name} />)}
+			
+
+			<div className="row flex-row flex-nowrap overflow-x-auto gap-4">
+				{starships.map( (nave, index)=> <Card key={nave.url} nave={nave} uid={nave.url.replace('https://swapi.dev/api/starships/','').replace('/','')} model={nave.model} name= {nave.name} />)}
+			</div>
 		
 		
 
